@@ -1,32 +1,20 @@
 package proyecto;
 
-
-public abstract class Reserva {
+abstract class Reserva {
     private String fechaIngreso;
     private String fechaSalida;
     private double costoTotal;
     private int dias;
     private int numReserva;
-    
     private double Descuentos;
-    
-    //metodo abstracto para calcular el costo de reserva
-    public abstract int calculoReserva();
 
-    public Reserva(String fechaIngreso, String fechaSalida, int dias,int numReserva,  double Descuentos, double costoTotal) {
+    public Reserva(String fechaIngreso, String fechaSalida, int dias, int numReserva, double Descuentos, double costoTotal) {
         this.fechaIngreso = fechaIngreso;
         this.fechaSalida = fechaSalida;
-        this.costoTotal = costoTotal;
+        this.dias = dias;
         this.numReserva = numReserva;
         this.Descuentos = Descuentos;
-    }
-
-    public double getDescuentos() {
-        return Descuentos;
-    }
-
-    public void setDescuentos(double Descuentos) {
-        this.Descuentos = Descuentos;
+        this.costoTotal = costoTotal;
     }
 
     public String getFechaIngreso() {
@@ -53,14 +41,6 @@ public abstract class Reserva {
         this.costoTotal = costoTotal;
     }
 
-    public int getNumReserva() {
-        return numReserva;
-    }
-
-    public void setNumReserva(int numReserva) {
-        this.numReserva = numReserva;
-    }
-   
     public int getDias() {
         return dias;
     }
@@ -68,15 +48,32 @@ public abstract class Reserva {
     public void setDias(int dias) {
         this.dias = dias;
     }
+
+    public int getNumReserva() {
+        return numReserva;
+    }
+
+    public void setNumReserva(int numReserva) {
+        this.numReserva = numReserva;
+    }
+
+    public double getDescuentos() {
+        return Descuentos;
+    }
+
+    public void setDescuentos(double Descuentos) {
+        this.Descuentos = Descuentos;
+    }
+
+    public abstract int calculoReserva(); // Método abstracto
+
     @Override
     public String toString() {
-        return super.toString()+
-                "\n---------------Factura Reserva--------------" 
-                + "\nFecha de ingreso del perro: " + getFechaIngreso() 
-                + "\nFecha de salida del perro: " + getFechaSalida()
-                +"\nDias reservados: "+getDias()
-                +  "\nNumero de Reserva: " + getNumReserva() 
-                +  "\nDescuentos aplicados: " + getDescuentos()*100+" %" ;
+        return "\n---------------Factura Reserva--------------" 
+                + "\nFecha de ingreso: " + fechaIngreso
+                + "\nFecha de salida: " + fechaSalida
+                + "\nDías reservados: " + dias
+                + "\nNúmero de Reserva: " + numReserva
+                + "\nDescuentos aplicados: " + (Descuentos * 100) + " %";
     }
-    
 }
