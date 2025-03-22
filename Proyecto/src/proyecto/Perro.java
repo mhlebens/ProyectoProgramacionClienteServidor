@@ -1,55 +1,27 @@
 package proyecto;
 
-
-public class Perro extends Reserva{
-    //atributo del nombre del perro
-    private String nom;
+class Perro extends Reserva {
+    private String nombre;
     private int edad;
     private String raza;
     private String tamano;
-    private boolean condicion=false;
-    
-      @Override
-    public int calculoReserva() {
-        /*calculo de la reserva: 
-            -tipo de habitación: 
-            --cantidad de noches: 
-            -servicio adicional: 
-        
-        */
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    private boolean condicion = false;
 
-    public Perro(String nom, int edad, String raza, String tamano, 
-            //CLASE RESERVA
-            String fechaIngreso, String fechaSalida, int dias, int numReserva, double Descuentos, double costoTotal) {
-        
+    public Perro(String nombre, int edad, String raza, String tamano, 
+                 String fechaIngreso, String fechaSalida, int dias, int numReserva, double Descuentos, double costoTotal) {
         super(fechaIngreso, fechaSalida, dias, numReserva, Descuentos, costoTotal);
-        this.nom = nom;
+        this.nombre = nombre;
         this.edad = edad;
         this.raza = raza;
         this.tamano = tamano;
     }
 
-    
-    
-
-
-
-    public String getTamano() {
-        return tamano;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setTamano(String tamano) {
-        this.tamano = tamano;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public int getEdad() {
@@ -68,6 +40,14 @@ public class Perro extends Reserva{
         this.raza = raza;
     }
 
+    public String getTamano() {
+        return tamano;
+    }
+
+    public void setTamano(String tamano) {
+        this.tamano = tamano;
+    }
+
     public boolean isCondicion() {
         return condicion;
     }
@@ -77,16 +57,16 @@ public class Perro extends Reserva{
     }
 
     @Override
-    public String toString() {
-        return "------------Perrito-Cliente-----------" 
-                + "\nNombre del perro:" + getNom() 
-                + "\nEdad: " + getEdad() 
-                + "\nRaza del perro:" + getRaza() 
-                + "\nTamano" + getTamano() ;
+    public int calculoReserva() {
+        return getDias() * 50; 
     }
 
- 
-    
-    
-    
+    @Override
+    public String toString() {
+        return "------------Perrito-Cliente-----------" 
+                + "\nNombre: " + nombre
+                + "\nEdad: " + edad
+                + "\nRaza: " + raza
+                + "\nTamaño: " + tamano;
+    }
 }
