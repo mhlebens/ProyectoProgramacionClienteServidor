@@ -1,36 +1,26 @@
-
 package proyecto;
 
 import java.util.Random;
 
 public class ActividadesDiarias {
 
-    public void dia() {
-             int dia;
-        String lista[]= new String[6];
-    //llenado de la lista de actividades: 
-    //estaba haciendo eso pero no se que le paso a mi compu y no me deja usar las variables
-    //por lo que voy a escribir el código dentro de un metodo para que si alguno les sirve sin el metodo lo saque
-    
-        lista[0]="Se realizaran actividades en la piscina";
-        lista[1]= "Se enseñaran trucos al perrito";
-        lista[2]= "Se hará una carrera de obstaculos entre los perritos";
-        lista[3]= "Se realizara la limpieza semanal de los perros";
-        lista[4]="Se realizara un masaje a su perro";
-        lista[5]="Los perros jugaran al aire libre";
+    private static final String[] ACTIVIDADES = {
+        "Se realizarán actividades en la piscina",
+        "Se enseñarán trucos al perrito",
+        "Se hará una carrera de obstáculos entre los perritos",
+        "Se realizará la limpieza semanal de los perros",
+        "Se realizará un masaje a su perro",
+        "Los perros jugarán al aire libre"
+    };
+
+    public String obtenerActividadDelDia() {
         Random aleatorio = new Random();
-        int aux = 0;
-        aux = aleatorio.nextInt(0, 6);
-        dia=aux;
-    
-}
+        int dia = aleatorio.nextInt(ACTIVIDADES.length);
+        return ACTIVIDADES[dia];
+    }
 
     @Override
-    public String toString(String lista[], int dia) {
-        return super.toString()
-                    +"-------Actividad diaria------"
-                            +lista[dia];
+    public String toString() {
+        return "------- Actividad diaria ------\n" + obtenerActividadDelDia();
     }
-        
-    
 }
