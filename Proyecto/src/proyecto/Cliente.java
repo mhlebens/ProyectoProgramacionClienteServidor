@@ -20,6 +20,8 @@ class Cliente extends Perro implements ServicioAdicional {
         this.correo = correo;
     }
     
+    
+    //getters y setters de la clase Cliente (nombreDueño, telefono,correo, habitacion)
      public String getCorreo() {
          return correo;
      }
@@ -53,20 +55,25 @@ class Cliente extends Perro implements ServicioAdicional {
     public void aplicarDescuento() {
         System.out.println("Aplicando descuento para " + getNombreDueño());
     }
-
-    @Override
-    public String toString() {
+    
+    
+    public void  mensaje(){
         String habitacionTexto;
         if (habitacion != null) {
             habitacionTexto = habitacion;
         } else {
             habitacionTexto = "No asignada";
         }
-
-        return super.toString() + "\n---------Dueño del perro: ------------"
-                + "\nNombre: " + getNombreDueño()
-                + "\nTeléfono: " + getTelefono()
-                + "\nCorreo Electrónico: " + getCorreo()
-                + "\nHabitación asignada: " + habitacionTexto;
     }
+
+  @Override
+     public String toString() {
+         return super.toString() +
+                 "\n---------Dueño del perro: ------------"
+                 +"\nNombre del dueño: "+ getNombreDueño()
+                 + "\nNumero de telefono" + getTelefono() 
+                 + "\nCorreo Electrónico" + getCorreo();
+     }
+    
+    
 }
