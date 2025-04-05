@@ -9,8 +9,13 @@ public class habitacion extends Perro{
     private boolean disponibilidad;
     private String mensaje;
     //private int numeroCuarto;
-
-    public habitacion(String numHabitacion, String tipo, boolean disponibilidad, String nom, int edad, String raza, String tamano, String fechaIngreso, String fechaSalida, int dias, int numReserva, double Descuentos, double costoTotal) {
+    
+//constructor de la clase habitacion
+    public habitacion(String numHabitacion, String tipo, boolean disponibilidad, 
+            //constructor de la clase perro
+            String nom, int edad, String raza, String tamano, 
+            //constructor de la clase reserva
+            String fechaIngreso, String fechaSalida, int dias, int numReserva, double Descuentos, double costoTotal) {
         super(nom, edad, raza, tamano, fechaIngreso, fechaSalida, dias, numReserva, Descuentos, costoTotal);
         this.numHabitacion = numHabitacion;
         this.tipo = tipo;
