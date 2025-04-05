@@ -1,6 +1,8 @@
 package proyecto;
 
 class Perro extends Reserva {
+    
+    //declaracion de atributos de la clase perro
     private String nombre;
     private int edad;
     private String raza;
@@ -75,9 +77,9 @@ class Perro extends Reserva {
     @Override
     public String toString() {
         return "------------Perrito-Cliente-----------" 
-                + "\nNombre: " + nombre
-                + "\nEdad: " + edad
-                + "\nRaza: " + raza
-                + "\nTamaño: " + tamano;
+                + "\nNombre: " + getNombre()
+                + "\nEdad: " + getEdad()
+                + "\nRaza: " + getRaza()
+                + "\nTamaño: " + getTamano();
     }
 }
