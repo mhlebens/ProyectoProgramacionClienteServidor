@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class ActividadesDiarias {
 
+    //actividades que realizarzían los perriros durante su estadía en el hotel
     private static final String[] ACTIVIDADES = {
         "Se realizarán actividades en la piscina",
         "Se enseñarán trucos al perrito",
