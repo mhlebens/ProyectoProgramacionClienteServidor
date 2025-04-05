@@ -6,8 +6,10 @@ class Perro extends Reserva {
     private String raza;
     private String tamano;
     private boolean condicion = false;
-
+    
+//constructor de la clase perror
     public Perro(String nombre, int edad, String raza, String tamano, 
+            //constructo de la clase Reserva
                  String fechaIngreso, String fechaSalida, int dias, int numReserva, double Descuentos, double costoTotal) {
         super(fechaIngreso, fechaSalida, dias, numReserva, Descuentos, costoTotal);
         this.nombre = nombre;
@@ -15,6 +17,9 @@ class Perro extends Reserva {
         this.raza = raza;
         this.tamano = tamano;
     }
+    
+    
+    //getters y setters de la clase perro (nombre, edad, raza y tamaño)
 
     public String getNombre() {
         return nombre;
@@ -58,6 +63,12 @@ class Perro extends Reserva {
 
     @Override
     public int calculoReserva() {
+        /*calculo de la reserva: 
+             -tipo de habitación: 
+             --cantidad de noches: 
+             -servicio adicional: 
+         
+         */
         return getDias() * 50; 
     }
 
