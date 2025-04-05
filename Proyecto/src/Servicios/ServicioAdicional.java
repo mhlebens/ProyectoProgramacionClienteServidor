@@ -1,4 +1,4 @@
-package proyecto;
+package Servicios;
 
 public interface ServicioAdicional {
     void asignarHabitacion();

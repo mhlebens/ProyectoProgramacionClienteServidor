@@ -1,6 +1,8 @@
-package proyecto;
+package Hilo;
 
-class HiloActividadesDiarias extends Thread {
+import Servicios.ActividadesDiarias;
+
+public class HiloActividadesDiarias extends Thread {
 
     private ActividadesDiarias actividades;
 
@@ -20,3 +22,4 @@ class HiloActividadesDiarias extends Thread {
         }
     }
 }
+

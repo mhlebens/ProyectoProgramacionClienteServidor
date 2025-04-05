@@ -1,7 +1,7 @@
 
 package Inicio;
 
-//Esto es para llamar los diferentes paquetes
+//Esto es para importar los paquetes
 import Entidades.*;
 import Hilo.*;
 import Servicios.*;
