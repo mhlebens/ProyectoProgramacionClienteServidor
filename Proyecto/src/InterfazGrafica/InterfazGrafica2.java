@@ -15,6 +15,9 @@ public class InterfazGrafica2 extends javax.swing.JFrame {
      */
     public InterfazGrafica2() {
         initComponents();
+        
+        
+
     }
 
     /**
@@ -27,50 +30,101 @@ public class InterfazGrafica2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        Ícono = new javax.swing.JLabel();
+        fotosMascotas = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        mbCliente = new javax.swing.JMenu();
+        mitRegistrar = new javax.swing.JMenuItem();
+        mitBuscar = new javax.swing.JMenuItem();
+        mitListaT = new javax.swing.JMenuItem();
+        mbReservas = new javax.swing.JMenu();
+        mitCrearNR = new javax.swing.JMenuItem();
+        mitBuscarR = new javax.swing.JMenuItem();
+        mitCancelarR = new javax.swing.JMenuItem();
+        mbServiciosE = new javax.swing.JMenu();
+        mitAgregarSE = new javax.swing.JMenuItem();
+        mitListaSE = new javax.swing.JMenuItem();
+        mbActividadesD = new javax.swing.JMenu();
+        mitAgendarAD = new javax.swing.JMenuItem();
+        mitListaAD = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1024, 768));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setPreferredSize(new java.awt.Dimension(921, 900));
 
-        Ícono.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        Ícono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/17.png"))); // NOI18N
-        Ícono.setText("jLabel3");
+        fotosMascotas.setBackground(new java.awt.Color(255, 255, 255));
+        fotosMascotas.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        fotosMascotas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/diseñoprincipal.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(Ícono, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1012, Short.MAX_VALUE))
+                .addComponent(fotosMascotas, javax.swing.GroupLayout.PREFERRED_SIZE, 1413, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(Ícono, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 896, Short.MAX_VALUE))
+                .addComponent(fotosMascotas, javax.swing.GroupLayout.PREFERRED_SIZE, 797, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jMenuBar1.setBackground(new java.awt.Color(102, 51, 0));
-        jMenuBar1.setForeground(new java.awt.Color(102, 51, 0));
-        jMenuBar1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jMenuBar1.setBackground(new java.awt.Color(0, 153, 153));
+        jMenuBar1.setForeground(new java.awt.Color(0, 0, 0));
 
-        jMenu1.setBackground(new java.awt.Color(102, 51, 0));
-        jMenu1.setForeground(new java.awt.Color(0, 0, 0));
-        jMenu1.setText("Cliente");
-        jMenuBar1.add(jMenu1);
+        mbCliente.setText("Cliente");
+        mbCliente.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
 
-        jMenu2.setBackground(new java.awt.Color(102, 51, 0));
-        jMenu2.setForeground(new java.awt.Color(0, 0, 0));
-        jMenu2.setText("Reservar");
-        jMenu2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jMenuBar1.add(jMenu2);
+        mitRegistrar.setText("Registrar");
+        mbCliente.add(mitRegistrar);
+
+        mitBuscar.setText("Buscar");
+        mbCliente.add(mitBuscar);
+
+        mitListaT.setText("Lista Total");
+        mbCliente.add(mitListaT);
+
+        jMenuBar1.add(mbCliente);
+
+        mbReservas.setText("Reservas");
+        mbReservas.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
+
+        mitCrearNR.setText("Crear Nueva Reserva");
+        mbReservas.add(mitCrearNR);
+
+        mitBuscarR.setText("Buscar Reserva");
+        mbReservas.add(mitBuscarR);
+
+        mitCancelarR.setText("Cancelar Reserva");
+        mbReservas.add(mitCancelarR);
+
+        jMenuBar1.add(mbReservas);
+
+        mbServiciosE.setText("Servicios Extras");
+        mbServiciosE.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
+
+        mitAgregarSE.setText("Agregar Servicio Extra");
+        mbServiciosE.add(mitAgregarSE);
+
+        mitListaSE.setText("Lista de Servicios Extras");
+        mbServiciosE.add(mitListaSE);
+
+        jMenuBar1.add(mbServiciosE);
+
+        mbActividadesD.setText("Actividades Diarias");
+        mbActividadesD.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
+
+        mitAgendarAD.setText("Agendar Actividades Diarias");
+        mbActividadesD.add(mitAgendarAD);
+
+        mitListaAD.setText("Lista de Actividades Diarias");
+        mbActividadesD.add(mitListaAD);
+
+        jMenuBar1.add(mbActividadesD);
 
         setJMenuBar(jMenuBar1);
 
@@ -78,13 +132,11 @@ public class InterfazGrafica2 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1742, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1026, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 147, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -126,10 +178,22 @@ public class InterfazGrafica2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JLabel fotosMascotas;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel Ícono;
+    private javax.swing.JMenu mbActividadesD;
+    private javax.swing.JMenu mbCliente;
+    private javax.swing.JMenu mbReservas;
+    private javax.swing.JMenu mbServiciosE;
+    private javax.swing.JMenuItem mitAgendarAD;
+    private javax.swing.JMenuItem mitAgregarSE;
+    private javax.swing.JMenuItem mitBuscar;
+    private javax.swing.JMenuItem mitBuscarR;
+    private javax.swing.JMenuItem mitCancelarR;
+    private javax.swing.JMenuItem mitCrearNR;
+    private javax.swing.JMenuItem mitListaAD;
+    private javax.swing.JMenuItem mitListaSE;
+    private javax.swing.JMenuItem mitListaT;
+    private javax.swing.JMenuItem mitRegistrar;
     // End of variables declaration//GEN-END:variables
 }
