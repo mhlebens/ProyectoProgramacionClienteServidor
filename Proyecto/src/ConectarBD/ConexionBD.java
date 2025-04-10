@@ -6,16 +6,20 @@ import java.sql.SQLException;
 
 public class ConexionBD {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/hotel_perros";
-    private static final String USUARIO = "root";
-    private static final String CLAVE = ""; 
+    Connection con = null;
 
-    public static Connection getConnection() {
+    String base = "hotel_perros"; // Asegurate que esta sea tu base de datos correcta
+    String url = "jdbc:mysql://localhost:3306/" + base;
+    String user = "root"; // Usuario
+    String password = ""; // Contraseña (ajustala si es necesario)
+
+    public Connection getConexion() {
         try {
-            return DriverManager.getConnection(URL, USUARIO, CLAVE);
-        } catch (SQLException e) {
-            System.out.println("Error al conectar a la base de datos: " + e.getMessage());
-            return null;
+            Class.forName("com.mysql.jdbc.Driver"); // Para connector 5.1.39
+            con = DriverManager.getConnection(url, user, password);
+        } catch (ClassNotFoundException | SQLException e) {
+            System.err.println("Error al conectar: " + e.getMessage());
         }
+        return con;
     }
 }
