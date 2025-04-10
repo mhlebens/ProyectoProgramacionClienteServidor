@@ -3,7 +3,7 @@ package BD;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Connection;
-import java.sql.DriverManager;
+import ConectarBD.ConexionBD;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
@@ -12,13 +12,9 @@ public class BDfrm extends javax.swing.JFrame {
     public BDfrm() {
         initComponents();
     }
-
-    private Connection conexionBD() throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/hotel_perros"; // Cambia esto si tu configuración es diferente
-        String usuario = "root"; // Cambia el usuario si es necesario
-        String contrasena = ""; // Agrega la contraseña si es necesario
-        return DriverManager.getConnection(url, usuario, contrasena);
-    }
+    
+    ConexionBD conexion = new ConexionBD();
+    Connection conn = conexion.getConexion();
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -179,7 +175,6 @@ public class BDfrm extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
-            Connection conn = conexionBD();
             String sql = "INSERT INTO cliente (nombre, cedula, email, telefono) VALUES (?, ?, ?, ?)";
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, jTextField2.getText()); // nombre
@@ -195,15 +190,14 @@ public class BDfrm extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try {
-            Connection conn = conexionBD();
             String sql = "SELECT * FROM cliente WHERE nombre = ?";
             PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1, jTextField2.getText()); // Buscar por nombre
+            stmt.setString(1, jTextField2.getText());
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
                 jTextField2.setText(rs.getString("nombre"));
-                jTextField5.setText(rs.getString("cedula")); // Mostrar la cédula
+                jTextField5.setText(rs.getString("cedula"));
                 jTextField3.setText(rs.getString("email"));
                 jTextField4.setText(rs.getString("telefono"));
             } else {
@@ -216,13 +210,12 @@ public class BDfrm extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         try {
-            Connection conn = conexionBD();
             String sql = "UPDATE cliente SET cedula = ?, email = ?, telefono = ? WHERE nombre = ?";
             PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1, jTextField5.getText()); // cedula
-            stmt.setString(2, jTextField3.getText()); // email
-            stmt.setString(3, jTextField4.getText()); // teléfono
-            stmt.setString(4, jTextField2.getText()); // nombre (condición)
+            stmt.setString(1, jTextField5.getText());
+            stmt.setString(2, jTextField3.getText());
+            stmt.setString(3, jTextField4.getText());
+            stmt.setString(4, jTextField2.getText());
             int rowsAffected = stmt.executeUpdate();
 
             if (rowsAffected > 0) {
@@ -253,16 +246,24 @@ public class BDfrm extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
+
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BDfrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BDfrm.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BDfrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BDfrm.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BDfrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BDfrm.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BDfrm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BDfrm.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
