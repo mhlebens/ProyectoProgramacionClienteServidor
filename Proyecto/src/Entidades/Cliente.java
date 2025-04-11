@@ -3,14 +3,18 @@ package Entidades;
 import Servicios.ServicioAdicional;
 
 public class Cliente extends Perro implements ServicioAdicional {
-
+    
+    //Atributos de la clase Cliente
     private String nombreDueño;
     private String telefono;
     private String correo;
     private String habitacion;
-
+    
+////Constructor de la clas Cliente
     public Cliente(String nombreDueño, String telefono, String correo,
+            //constructor de la clase perro
             String nombrePerro, int edad, String raza, String tamano,
+                   //Constructor de la clase RESERVA 
             String fechaIngreso, String fechaSalida, int dias, int numReserva, double Descuentos, double costoTotal) {
         super(nombrePerro, edad, raza, tamano, fechaIngreso, fechaSalida, dias, numReserva, Descuentos, costoTotal);
         this.nombreDueño = nombreDueño;
@@ -72,9 +76,9 @@ public class Cliente extends Perro implements ServicioAdicional {
         }
 
         return super.toString() + "\n---------Dueño del perro: ------------"
-                + "\nNombre: " + nombreDueño
-                + "\nTeléfono: " + telefono
-                + "\nCorreo Electrónico: " + correo
-                + "\nHabitación asignada: " + habitacionTexto;
+                + "\nNombre: " + getNombreDueño();
+                + "\nTeléfono: " + getTelefono();
+                + "\nCorreo Electrónico: " + getCorreo
+                + "\nHabitación asignada: " + getHabitacionTexto;
     }
 }
