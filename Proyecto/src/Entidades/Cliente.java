@@ -2,7 +2,7 @@ package Entidades;
 
 import Servicios.ServicioAdicional;
 
-public class Cliente extends Perro implements ServicioAdicional {
+public class Cliente extends Habitacion implements ServicioAdicional {
 
     //Atributos de la clase Cliente
     private String nombreDueño;
@@ -10,17 +10,25 @@ public class Cliente extends Perro implements ServicioAdicional {
     private String correo;
     private String habitacion;
 
-    ////Constructor de la clas Cliente
-    public Cliente(String nombreDueño, String telefono, String correo,
-            //constructor de la clase perro
-            String nombrePerro, int edad, String raza, String tamano,
-            //Constructor de la clase RESERVA 
+    ////Constructor de la clase Cliente
+    public Cliente(String nombreDueño, String telefono, String correo, String habitacion,
+            //constructor de la clase Habitacion
+            String numHabitacion, String tipo, boolean disponibilidad, String mensaje, 
+            //constructor de la clase Perro
+            String nombrePerro, int edad, String raza, String tamano, 
+            //constructor de la clase Reserva
             String fechaIngreso, String fechaSalida, int dias, int numReserva, double Descuentos, double costoTotal) {
-        super(nombrePerro, edad, raza, tamano, fechaIngreso, fechaSalida, dias, numReserva, Descuentos, costoTotal);
+        super(numHabitacion, tipo, disponibilidad, mensaje, nombrePerro, edad, raza, tamano, fechaIngreso, fechaSalida, dias, numReserva, Descuentos, costoTotal);
         this.nombreDueño = nombreDueño;
         this.telefono = telefono;
         this.correo = correo;
+        this.habitacion = habitacion;
     }
+
+  
+    
+    
+    
     //Métodos Getters y Setter
 
     public String getNombreDueño() {
