@@ -4,6 +4,9 @@
  */
 package InterfazGrafica;
 
+import ConectarBD.ConexionBD;
+import java.sql.Connection;
+
 /**
  *
  * @author marif
@@ -15,6 +18,8 @@ public class RegistroP extends javax.swing.JFrame {
      */
     public RegistroP() {
         initComponents();
+         ConexionBD conexion = new ConexionBD();
+    Connection conn = conexion.getConexion();
     }
 
     /**
