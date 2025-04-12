@@ -7,7 +7,8 @@ public abstract class Reserva {
     private int dias;
     private int numReserva;
     private double descuentos;
-
+    
+//constructor clase Reserva
     public Reserva(String fechaIngreso, String fechaSalida, int dias, int numReserva, double Descuentos, double costoTotal) {
         this.fechaIngreso = fechaIngreso;
         this.fechaSalida = fechaSalida;
@@ -70,10 +71,10 @@ public abstract class Reserva {
     @Override
     public String toString() {
         return "\n---------------Factura Reserva--------------" 
-                + "\nFecha de ingreso: " + fechaIngreso
-                + "\nFecha de salida: " + fechaSalida
-                + "\nDías reservados: " + dias
-                + "\nNúmero de Reserva: " + numReserva
-                + "\nDescuentos aplicados: " + (descuentos * 100) + " %";
+                + "\nFecha de ingreso: " + getFechaIngreso()
+                + "\nFecha de salida: " + getFechaSalida()
+                + "\nDías reservados: " + getDias()
+                + "\nNúmero de Reserva: " + getNumReserva()
+                + "\nDescuentos aplicados: " + (getDescuentos() * 100) + " %";
     }
 }
