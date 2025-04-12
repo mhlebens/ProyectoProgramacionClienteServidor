@@ -78,7 +78,7 @@ public class Cliente extends Perro implements ServicioAdicional {
         return super.toString() + "\n---------Dueño del perro: ------------"
                 + "\nNombre: " + getNombreDueño();
                 + "\nTeléfono: " + getTelefono();
-                + "\nCorreo Electrónico: " + getCorreo
-                + "\nHabitación asignada: " + getHabitacionTexto;
+                + "\nCorreo Electrónico: " + getCorreo()
+                + "\nHabitación asignada: " + getHabitacionTexto();
     }
 }
