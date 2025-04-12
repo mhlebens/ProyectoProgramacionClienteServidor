@@ -13,16 +13,19 @@ public class Habitacion extends Perro{
     //private int numeroCuarto;
 
     //constructor clase Habitacion
-    public Habitacion(String nom, String numHabitacion, String tipo, boolean disponibilidad, 
-        //constructor de la clase perro
-            String nombreDueño, int edad, String raza, String tamano, 
+    public Habitacion(String numHabitacion, String tipo, boolean disponibilidad, String mensaje, 
+            //constructor de la clase perro
+            String nombrePerro, int edad, String raza, String tamano, 
             //constructor de la clase Reserva
             String fechaIngreso, String fechaSalida, int dias, int numReserva, double Descuentos, double costoTotal) {
-        super(nom, edad, raza, tamano, fechaIngreso, fechaSalida, dias, numReserva, Descuentos, costoTotal);
+        super(nombrePerro, edad, raza, tamano, fechaIngreso, fechaSalida, dias, numReserva, Descuentos, costoTotal);
         this.numHabitacion = numHabitacion;
         this.tipo = tipo;
         this.disponibilidad = disponibilidad;
+        this.mensaje = mensaje;
     }
+   
+    
 
     
 //Getters Y Setters
