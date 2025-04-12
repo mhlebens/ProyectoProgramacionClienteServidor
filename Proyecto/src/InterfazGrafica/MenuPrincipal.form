@@ -35,19 +35,14 @@
             </Property>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="mitRegistrar">
+            <MenuItem class="javax.swing.JMenuItem" name="mitRegistroP">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Registrar"/>
+                <Property name="text" type="java.lang.String" value="Registro de Perros"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="mitBuscar">
+            <MenuItem class="javax.swing.JMenuItem" name="mitRegistroD">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Buscar"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="mitListaT">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Lista Total"/>
+                <Property name="text" type="java.lang.String" value="Registro de Due&#xf1;os"/>
               </Properties>
             </MenuItem>
           </SubComponents>

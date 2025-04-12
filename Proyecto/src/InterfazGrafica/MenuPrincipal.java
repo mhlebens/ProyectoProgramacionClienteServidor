@@ -39,9 +39,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         mbPrincipal = new javax.swing.JMenu();
         mbCliente = new javax.swing.JMenu();
-        mitRegistrar = new javax.swing.JMenuItem();
-        mitBuscar = new javax.swing.JMenuItem();
-        mitListaT = new javax.swing.JMenuItem();
+        mitRegistroP = new javax.swing.JMenuItem();
+        mitRegistroD = new javax.swing.JMenuItem();
         mbReservas = new javax.swing.JMenu();
         mitCrearNR = new javax.swing.JMenuItem();
         mitBuscarR = new javax.swing.JMenuItem();
@@ -82,14 +81,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         mbCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Client Icon.png"))); // NOI18N
         mbCliente.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
 
-        mitRegistrar.setText("Registrar");
-        mbCliente.add(mitRegistrar);
+        mitRegistroP.setText("Registro de Perros");
+        mbCliente.add(mitRegistroP);
 
-        mitBuscar.setText("Buscar");
-        mbCliente.add(mitBuscar);
-
-        mitListaT.setText("Lista Total");
-        mbCliente.add(mitListaT);
+        mitRegistroD.setText("Registro de Dueños");
+        mbCliente.add(mitRegistroD);
 
         jMenuBar1.add(mbCliente);
 
@@ -195,13 +191,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu mbServiciosE;
     private javax.swing.JMenuItem mitAgendarAD;
     private javax.swing.JMenuItem mitAgregarSE;
-    private javax.swing.JMenuItem mitBuscar;
     private javax.swing.JMenuItem mitBuscarR;
     private javax.swing.JMenuItem mitCancelarR;
     private javax.swing.JMenuItem mitCrearNR;
     private javax.swing.JMenuItem mitListaAD;
     private javax.swing.JMenuItem mitListaSE;
-    private javax.swing.JMenuItem mitListaT;
-    private javax.swing.JMenuItem mitRegistrar;
+    private javax.swing.JMenuItem mitRegistroD;
+    private javax.swing.JMenuItem mitRegistroP;
     // End of variables declaration//GEN-END:variables
 }
