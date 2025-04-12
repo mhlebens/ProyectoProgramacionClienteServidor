@@ -13,7 +13,7 @@ public class Habitacion extends Perro{
     //private int numeroCuarto;
 
     //constructor clase Habitacion
-    public Habitacion(String numHabitacion, String tipo, boolean disponibilidad, 
+    public Habitacion(String nom, String numHabitacion, String tipo, boolean disponibilidad, 
         //constructor de la clase perro
             String nombreDueño, int edad, String raza, String tamano, 
             //constructor de la clase Reserva
