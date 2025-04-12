@@ -15,7 +15,7 @@ public class Habitacion extends Perro{
     //constructor clase Habitacion
     public Habitacion(String numHabitacion, String tipo, boolean disponibilidad, 
         //constructor de la clase perro
-            String nom, int edad, String raza, String tamano, 
+            String nombreDueño, int edad, String raza, String tamano, 
             //constructor de la clase Reserva
             String fechaIngreso, String fechaSalida, int dias, int numReserva, double Descuentos, double costoTotal) {
         super(nom, edad, raza, tamano, fechaIngreso, fechaSalida, dias, numReserva, Descuentos, costoTotal);
