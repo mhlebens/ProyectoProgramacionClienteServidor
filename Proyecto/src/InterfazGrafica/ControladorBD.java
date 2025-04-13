@@ -50,10 +50,12 @@ public class ControladorBD implements ActionListener {
         //faltan todos los campos para llenar
     }
 
+    
     //implemntacion de la accion de presionar los botones
     @Override
     public void actionPerformed(ActionEvent e) {
-
+    }
+    /*
         //boton de registrar
         if (e.getSource() == registro.btnRegistrar) {
             perrito.setNombrePerro(registro.txtNombrePerro.getText());
@@ -61,7 +63,7 @@ public class ControladorBD implements ActionListener {
 
             /* Espacio para el combo box, 
             perrito.setTamano(registro.cbTamano.getText()));
-             */
+             
             perrito.setEdad(Integer.parseInt(registro.txtEdad.getText()));
 
             if (botones.registrar(perrito)) {
@@ -82,7 +84,7 @@ public class ControladorBD implements ActionListener {
                 registro.txtRaza.setText(perrito.getRaza());
                 /*espacio para el combo box
                 registro.cbTamano.setText(String.valueOf(perrito.getTamano()));
-              */
+              
 
                 JOptionPane.showMessageDialog(null, "Registro encontrado");
 
@@ -91,11 +93,12 @@ public class ControladorBD implements ActionListener {
                 limpiarRegistro();
             }
         }
-
+    
+*/
        
 
-    }
+    
 }
 
 
-}
+
