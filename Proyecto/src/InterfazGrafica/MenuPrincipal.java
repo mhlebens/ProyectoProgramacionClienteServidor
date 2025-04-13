@@ -1,5 +1,5 @@
 /*
-
+Este es el frame del menú principal
  */
 package InterfazGrafica;
 
