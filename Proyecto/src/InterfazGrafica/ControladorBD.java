@@ -15,13 +15,13 @@ public class ControladorBD implements ActionListener {
     private final Perro perrito;
     //instancia del formularios para manejar la base de datos
     private final RegistroP registro;
-    private final Servicios reserva;
+    private final Reserva reserva;
     private final MenuPrincipal menu;
     //instancia de la clase donde se brinda la funcionalidad de los botones
     private final BotonesFuncionalidad botones;
 
     //constructor para inicializar las instancias
-    public ControladorBD(Cliente persona, Perro perrito, RegistroP registro, Servicios reserva, MenuPrincipal menu, BotonesFuncionalidad botones) {
+    public ControladorBD(Cliente persona, Perro perrito, RegistroP registro, Reserva reserva, MenuPrincipal menu, BotonesFuncionalidad botones) {
         this.persona = persona;
         this.perrito = perrito;
         this.registro = registro;
@@ -108,7 +108,7 @@ public class ControladorBD implements ActionListener {
         }
     
         //--------------------------------------------------------------------------------------------------------------
-        //Aqui inician los botones del formulario Servicios
+        //Aqui inician los botones del formulario Reserva
          if (e.getSource() == reserva.btnReservar) {
             persona.setFechaIngreso(reserva.txtFechaIn.getText());
             persona.setFechaSalida(reserva.txtFechaSa.getText());
