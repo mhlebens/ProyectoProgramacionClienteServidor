@@ -1,8 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package InterfazGrafica;
+
+import ConectarBD.ConexionBD;
+import java.sql.Connection;
 
 /**
  *
@@ -11,10 +11,12 @@ package InterfazGrafica;
 public class Reserva extends javax.swing.JFrame {
 
     /**
-     * Creates new form Reserva
+     * Creates new form Servicios
      */
     public Reserva() {
         initComponents();
+         ConexionBD conexion = new ConexionBD();
+    Connection conn = conexion.getConexion();
     }
 
     /**
@@ -32,37 +34,43 @@ public class Reserva extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        txtNomPerro = new javax.swing.JTextField();
+        txtFechaIn = new javax.swing.JTextField();
+        txtNomDueno = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        txtFechaSa = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        txtNumHabitacion = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
+        txtNumReserva = new javax.swing.JTextField();
+        txtDescuento = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        txtPrecioF = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnReservar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         mbPrincipal = new javax.swing.JMenu();
         mitRegresarMP = new javax.swing.JMenuItem();
         mbCliente = new javax.swing.JMenu();
         mitRegistrar = new javax.swing.JMenuItem();
+        mitBuscar = new javax.swing.JMenuItem();
+        mitListaT = new javax.swing.JMenuItem();
         mbReservas = new javax.swing.JMenu();
         mitCrearNR = new javax.swing.JMenuItem();
+        mitBuscarR = new javax.swing.JMenuItem();
+        mitCancelarR = new javax.swing.JMenuItem();
         mbServiciosE = new javax.swing.JMenu();
         mitAgregarSE = new javax.swing.JMenuItem();
+        mitListaSE = new javax.swing.JMenuItem();
         mbActividadesD = new javax.swing.JMenu();
         mitAgendarAD = new javax.swing.JMenuItem();
+        mitListaAD = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(153, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -82,45 +90,45 @@ public class Reserva extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Fecha de Salida:");
 
-        jTextField1.setBackground(new java.awt.Color(220, 201, 201));
-        jTextField1.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
+        txtNomPerro.setBackground(new java.awt.Color(220, 201, 201));
+        txtNomPerro.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        txtNomPerro.setForeground(new java.awt.Color(0, 0, 0));
 
-        jTextField2.setBackground(new java.awt.Color(220, 201, 201));
-        jTextField2.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
+        txtFechaIn.setBackground(new java.awt.Color(220, 201, 201));
+        txtFechaIn.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        txtFechaIn.setForeground(new java.awt.Color(0, 0, 0));
 
-        jTextField3.setBackground(new java.awt.Color(220, 201, 201));
-        jTextField3.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
+        txtNomDueno.setBackground(new java.awt.Color(220, 201, 201));
+        txtNomDueno.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        txtNomDueno.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel7.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("A continuación, ingrese los datos necesarios para hacer la reserva");
 
-        jTextField4.setBackground(new java.awt.Color(220, 201, 201));
-        jTextField4.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(0, 0, 0));
+        txtFechaSa.setBackground(new java.awt.Color(220, 201, 201));
+        txtFechaSa.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        txtFechaSa.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel8.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("N° habitación:");
 
-        jTextField5.setBackground(new java.awt.Color(220, 201, 201));
-        jTextField5.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(0, 0, 0));
+        txtNumHabitacion.setBackground(new java.awt.Color(220, 201, 201));
+        txtNumHabitacion.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        txtNumHabitacion.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel9.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("N° reserva:");
 
-        jTextField6.setBackground(new java.awt.Color(220, 201, 201));
-        jTextField6.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        jTextField6.setForeground(new java.awt.Color(0, 0, 0));
+        txtNumReserva.setBackground(new java.awt.Color(220, 201, 201));
+        txtNumReserva.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        txtNumReserva.setForeground(new java.awt.Color(0, 0, 0));
 
-        jTextField7.setBackground(new java.awt.Color(220, 201, 201));
-        jTextField7.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        jTextField7.setForeground(new java.awt.Color(0, 0, 0));
+        txtDescuento.setBackground(new java.awt.Color(220, 201, 201));
+        txtDescuento.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        txtDescuento.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel6.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
@@ -130,9 +138,9 @@ public class Reserva extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Precio Total");
 
-        jTextField8.setBackground(new java.awt.Color(220, 201, 201));
-        jTextField8.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        jTextField8.setForeground(new java.awt.Color(0, 0, 0));
+        txtPrecioF.setBackground(new java.awt.Color(220, 201, 201));
+        txtPrecioF.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        txtPrecioF.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -144,14 +152,14 @@ public class Reserva extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNomDueno, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel9)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtNumReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -160,31 +168,31 @@ public class Reserva extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtNumHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addComponent(jLabel10)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtPrecioF, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addComponent(jLabel6)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(txtDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(12, 12, 12)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtFechaIn, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtFechaSa, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(12, 12, 12)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtNomPerro, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(208, 208, 208)))
                         .addGap(50, 152, Short.MAX_VALUE))))
         );
@@ -196,33 +204,33 @@ public class Reserva extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNumReserva, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFechaIn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFechaSa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNomPerro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNomDueno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtNumHabitacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDescuento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPrecioF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26))
         );
 
@@ -230,16 +238,16 @@ public class Reserva extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Reserva");
 
-        jButton1.setBackground(new java.awt.Color(153, 102, 0));
-        jButton1.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
-        jButton1.setText("Reservar");
-        jButton1.setActionCommand("");
+        btnReservar.setBackground(new java.awt.Color(153, 102, 0));
+        btnReservar.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
+        btnReservar.setText("Reservar");
+        btnReservar.setActionCommand("");
 
-        jButton2.setBackground(new java.awt.Color(204, 153, 0));
-        jButton2.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
-        jButton2.setText("Buscar");
-        jButton2.setAlignmentY(0.0F);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnBuscar.setBackground(new java.awt.Color(204, 153, 0));
+        btnBuscar.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
+        btnBuscar.setText("Buscar");
+        btnBuscar.setAlignmentY(0.0F);
+        btnBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -251,14 +259,14 @@ public class Reserva extends javax.swing.JFrame {
                         .addGap(52, 52, 52)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(362, 362, 362)
+                        .addGap(383, 383, 383)
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(297, 297, 297)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnReservar, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(43, 43, 43)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(52, Short.MAX_VALUE))
+                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -269,8 +277,8 @@ public class Reserva extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnBuscar)
+                    .addComponent(btnReservar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(12, 12, 12))
         );
 
@@ -297,6 +305,12 @@ public class Reserva extends javax.swing.JFrame {
         mitRegistrar.setText("Registrar");
         mbCliente.add(mitRegistrar);
 
+        mitBuscar.setText("Buscar");
+        mbCliente.add(mitBuscar);
+
+        mitListaT.setText("Lista Total");
+        mbCliente.add(mitListaT);
+
         jMenuBar1.add(mbCliente);
 
         mbReservas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Booking Icon.png"))); // NOI18N
@@ -304,6 +318,12 @@ public class Reserva extends javax.swing.JFrame {
 
         mitCrearNR.setText("Crear Nueva Reserva");
         mbReservas.add(mitCrearNR);
+
+        mitBuscarR.setText("Buscar Reserva");
+        mbReservas.add(mitBuscarR);
+
+        mitCancelarR.setText("Cancelar Reserva");
+        mbReservas.add(mitCancelarR);
 
         jMenuBar1.add(mbReservas);
 
@@ -313,6 +333,9 @@ public class Reserva extends javax.swing.JFrame {
         mitAgregarSE.setText("Agregar Servicio Extra");
         mbServiciosE.add(mitAgregarSE);
 
+        mitListaSE.setText("Lista de Servicios Extras");
+        mbServiciosE.add(mitListaSE);
+
         jMenuBar1.add(mbServiciosE);
 
         mbActividadesD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/5.png"))); // NOI18N
@@ -320,6 +343,9 @@ public class Reserva extends javax.swing.JFrame {
 
         mitAgendarAD.setText("Agendar Actividades Diarias");
         mbActividadesD.add(mitAgendarAD);
+
+        mitListaAD.setText("Lista de Actividades Diarias");
+        mbActividadesD.add(mitListaAD);
 
         jMenuBar1.add(mbActividadesD);
 
@@ -369,6 +395,7 @@ public class Reserva extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Reserva.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -379,8 +406,8 @@ public class Reserva extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton jButton1;
-    public javax.swing.JButton jButton2;
+    public javax.swing.JButton btnBuscar;
+    public javax.swing.JButton btnReservar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -394,14 +421,6 @@ public class Reserva extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    public javax.swing.JTextField jTextField1;
-    public javax.swing.JTextField jTextField2;
-    public javax.swing.JTextField jTextField3;
-    public javax.swing.JTextField jTextField4;
-    public javax.swing.JTextField jTextField5;
-    public javax.swing.JTextField jTextField6;
-    public javax.swing.JTextField jTextField7;
-    public javax.swing.JTextField jTextField8;
     private javax.swing.JMenu mbActividadesD;
     private javax.swing.JMenu mbCliente;
     private javax.swing.JMenu mbPrincipal;
@@ -409,8 +428,22 @@ public class Reserva extends javax.swing.JFrame {
     private javax.swing.JMenu mbServiciosE;
     private javax.swing.JMenuItem mitAgendarAD;
     private javax.swing.JMenuItem mitAgregarSE;
+    private javax.swing.JMenuItem mitBuscar;
+    private javax.swing.JMenuItem mitBuscarR;
+    private javax.swing.JMenuItem mitCancelarR;
     private javax.swing.JMenuItem mitCrearNR;
+    private javax.swing.JMenuItem mitListaAD;
+    private javax.swing.JMenuItem mitListaSE;
+    private javax.swing.JMenuItem mitListaT;
     private javax.swing.JMenuItem mitRegistrar;
     private javax.swing.JMenuItem mitRegresarMP;
+    public javax.swing.JTextField txtDescuento;
+    public javax.swing.JTextField txtFechaIn;
+    public javax.swing.JTextField txtFechaSa;
+    public javax.swing.JTextField txtNomDueno;
+    public javax.swing.JTextField txtNomPerro;
+    public javax.swing.JTextField txtNumHabitacion;
+    public javax.swing.JTextField txtNumReserva;
+    public javax.swing.JTextField txtPrecioF;
     // End of variables declaration//GEN-END:variables
 }
