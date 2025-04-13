@@ -29,8 +29,13 @@ public class ControladorBD implements ActionListener {
         this.menu = menu;
         this.botones = botones;
 
+        //inicializacion de la accion de cickear el boton
+        //botones del dormulario de registro
         this.registro.btnBuscar.addActionListener(this);
         this.registro.btnRegistrar.addActionListener(this);
+        //botones del forumulario de la reserva
+        this.reserva.btnReservar.addActionListener(this);
+        this.reserva.btnBuscar.addActionListener(this);
     }
 
     public void iniciar() {
@@ -47,7 +52,14 @@ public class ControladorBD implements ActionListener {
     }
 
     public void limpiarReserva() {
-        //faltan todos los campos para llenar
+        reserva.txtNumReserva.setText("");
+        reserva.txtFechaIn.setText("");
+        reserva.txtFechaSa.setText("");
+        reserva.txtNomPerro.setText("");
+        reserva.txtNomDueno.setText("");
+        reserva.txtNumHabitacion.setText("");
+        reserva.txtDescuento.setText("");
+        reserva.txtPrecioF.setText("");
     }
 
     
@@ -56,6 +68,7 @@ public class ControladorBD implements ActionListener {
     public void actionPerformed(ActionEvent e) {
     }
     /*
+    
         //boton de registrar
         if (e.getSource() == registro.btnRegistrar) {
             perrito.setNombrePerro(registro.txtNombrePerro.getText());
@@ -76,6 +89,7 @@ public class ControladorBD implements ActionListener {
             }
         }
 
+        //boton buscar
         if (e.getSource() == registro.btnBuscar) {
             perrito.setNombrePerro(registro.txtNombrePerro.getText());
             if (botones.buscar(registro)) {
@@ -84,7 +98,6 @@ public class ControladorBD implements ActionListener {
                 registro.txtRaza.setText(perrito.getRaza());
                 /*espacio para el combo box
                 registro.cbTamano.setText(String.valueOf(perrito.getTamano()));
-              
 
                 JOptionPane.showMessageDialog(null, "Registro encontrado");
 
@@ -94,7 +107,54 @@ public class ControladorBD implements ActionListener {
             }
         }
     
+        //--------------------------------------------------------------------------------------------------------------
+        //Aqui inician los botones del formulario Servicios
+         if (e.getSource() == reserva.btnReservar) {
+            persona.setFechaIngreso(reserva.txtFechaIn.getText());
+            persona.setFechaSalida(reserva.txtFechaSa.getText());
+            persona.setNombrePerro(reserva.txtNomPerro.getText());
+            persona.setNombreDueño(reserva.txtNomDueno.getText());
+            persona.setDescuentos(Double.parseDouble(reserva.txtDescuento.getText()));
+         
+
+            if (botones.reservar(persona)) {
+                JOptionPane.showMessageDialog(null, "Registro guardado");
+                limpiarReserva();
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al guardar");
+                limpiarReserva();
+            }
+            
+            //boton de buscar
+            
+              if (e.getSource() == reserva.btnBuscar) {
+            persona.setNumReserva(Integer.parseInt(reserva.txtNumReserva.getText()));
+            if (botones.buscar(reserva)) {
+                reserva.txtNumReserva.setText(String.valueOf(persona.getNumReserva()));
+                reserva.txtFechaIn.setText(persona.getFechaIngreso());
+                reserva.txtFechaSa.setText(persona.getFechaSalida());
+                reserva.txtNomPerro.setText(persona.getNombrePerro());
+                reserva.txtNomDueno.setText(persona.getNombreDueño());
+                reserva.txtNumHabitacion.setText(String.valueOf(persona.getNumHabitacion()));
+                reserva.txtDescuento.setText(String.valueOf(persona.getDescuentos()));
+                reserva.txtPrecioF.setText(String.valueOf(persona.getCostoTotal()));
+           
+                JOptionPane.showMessageDialog(null, "Registro encontrado");
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Error no se encontro el registro");
+                limpiarRegistro();
+            }
+        }
 */
+    
+            
+        }
+        
+
+    
+    
        
 
     
