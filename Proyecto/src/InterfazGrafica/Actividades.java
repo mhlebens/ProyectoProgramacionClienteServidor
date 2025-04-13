@@ -186,6 +186,11 @@ public class Actividades extends javax.swing.JFrame {
         jButton2.setText("Nueva Lista");
         jButton2.setAlignmentY(0.0F);
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -288,6 +293,18 @@ public class Actividades extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         mostrarActividades();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        ActividadesDiarias actividades = new ActividadesDiarias();
+        String[] lista = actividades.generarListaSinRepetir(6);
+
+        jTextField1.setText(lista[0]);
+        jTextField2.setText(lista[1]);
+        jTextField3.setText(lista[2]);
+        jTextField4.setText(lista[3]);
+        jTextField5.setText(lista[4]);
+        jTextField6.setText(lista[5]);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     public static void main(String args[]) {
 
