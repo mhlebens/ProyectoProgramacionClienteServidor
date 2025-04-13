@@ -18,7 +18,7 @@
         </Property>
       </Properties>
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="mbPrincipal">
+        <Menu class="javax.swing.JMenu" name="mbMenuP">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Recursos/Dog&apos;s House Icon.png"/>
@@ -27,7 +27,7 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="mitRegresarMP">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Regresar al Men&#xfa; Principal"/>
+                <Property name="text" type="java.lang.String" value="Regresar a men&#xfa; principal"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mitRegresarMPActionPerformed"/>
@@ -45,24 +45,25 @@
             </Property>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="mitRegistrar">
+            <MenuItem class="javax.swing.JMenuItem" name="mitRegistroP">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Registrar"/>
+                <Property name="text" type="java.lang.String" value="Registro de Perros"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mitRegistroPActionPerformed"/>
+              </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="mitBuscar">
+            <MenuItem class="javax.swing.JMenuItem" name="mitRegistroD">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Buscar"/>
+                <Property name="text" type="java.lang.String" value="Registro de Due&#xf1;os"/>
               </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="mitListaT">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Lista Total"/>
-              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mitRegistroDActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="mbReservas">
+        <Menu class="javax.swing.JMenu" name="mbReserva">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/Recursos/Booking Icon.png"/>
@@ -71,45 +72,6 @@
               <Font name="Dubai" size="14" style="1"/>
             </Property>
           </Properties>
-          <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="mitCrearNR">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Crear Nueva Reserva"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="mitBuscarR">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Buscar Reserva"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="mitCancelarR">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Cancelar Reserva"/>
-              </Properties>
-            </MenuItem>
-          </SubComponents>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="mbServiciosE">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/Recursos/ExtraServices Icon.png"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Dubai" size="14" style="1"/>
-            </Property>
-          </Properties>
-          <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="mitAgregarSE">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Agregar Servicio Extra"/>
-              </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="mitListaSE">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Lista de Servicios Extras"/>
-              </Properties>
-            </MenuItem>
-          </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="mbActividadesD">
           <Properties>
@@ -121,15 +83,13 @@
             </Property>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="mitAgendarAD">
+            <MenuItem class="javax.swing.JMenuItem" name="mitGestionAD">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Agendar Actividades Diarias"/>
+                <Property name="text" type="java.lang.String" value="Gesti&#xf3;n de Actividades Diarias"/>
               </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="mitListaAD">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Lista de Actividades Diarias"/>
-              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mitGestionADActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -179,21 +139,21 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                           <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="383" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="297" max="-2" attributes="0"/>
                           <Component id="btnReservar" min="-2" pref="106" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                           <Component id="btnBuscar" min="-2" pref="101" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="321" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="53" max="32767" attributes="0"/>
@@ -580,7 +540,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Reserva"/>
+            <Property name="text" type="java.lang.String" value="Gesti&#xf3;n de Reservas"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnReservar">
