@@ -39,18 +39,11 @@ public class Actividades extends javax.swing.JFrame {
         mitRegresarMP = new javax.swing.JMenuItem();
         mbCliente = new javax.swing.JMenu();
         mitRegistrar = new javax.swing.JMenuItem();
-        mitBuscar = new javax.swing.JMenuItem();
-        mitListaT = new javax.swing.JMenuItem();
         mbReservas = new javax.swing.JMenu();
         mitCrearNR = new javax.swing.JMenuItem();
-        mitBuscarR = new javax.swing.JMenuItem();
-        mitCancelarR = new javax.swing.JMenuItem();
         mbServiciosE = new javax.swing.JMenu();
         mitAgregarSE = new javax.swing.JMenuItem();
-        mitListaSE = new javax.swing.JMenuItem();
         mbActividadesD = new javax.swing.JMenu();
-        mitAgendarAD = new javax.swing.JMenuItem();
-        mitListaAD = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -169,12 +162,6 @@ public class Actividades extends javax.swing.JFrame {
         mitRegistrar.setText("Registrar");
         mbCliente.add(mitRegistrar);
 
-        mitBuscar.setText("Buscar");
-        mbCliente.add(mitBuscar);
-
-        mitListaT.setText("Lista Total");
-        mbCliente.add(mitListaT);
-
         jMenuBar1.add(mbCliente);
 
         mbReservas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Booking Icon.png"))); // NOI18N
@@ -182,12 +169,6 @@ public class Actividades extends javax.swing.JFrame {
 
         mitCrearNR.setText("Crear Nueva Reserva");
         mbReservas.add(mitCrearNR);
-
-        mitBuscarR.setText("Buscar Reserva");
-        mbReservas.add(mitBuscarR);
-
-        mitCancelarR.setText("Cancelar Reserva");
-        mbReservas.add(mitCancelarR);
 
         jMenuBar1.add(mbReservas);
 
@@ -197,20 +178,10 @@ public class Actividades extends javax.swing.JFrame {
         mitAgregarSE.setText("Agregar Servicio Extra");
         mbServiciosE.add(mitAgregarSE);
 
-        mitListaSE.setText("Lista de Servicios Extras");
-        mbServiciosE.add(mitListaSE);
-
         jMenuBar1.add(mbServiciosE);
 
         mbActividadesD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/5.png"))); // NOI18N
         mbActividadesD.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
-
-        mitAgendarAD.setText("Agendar Actividades Diarias");
-        mbActividadesD.add(mitAgendarAD);
-
-        mitListaAD.setText("Lista de Actividades Diarias");
-        mbActividadesD.add(mitListaAD);
-
         jMenuBar1.add(mbActividadesD);
 
         setJMenuBar(jMenuBar1);
@@ -283,15 +254,8 @@ public class Actividades extends javax.swing.JFrame {
     private javax.swing.JMenu mbPrincipal;
     private javax.swing.JMenu mbReservas;
     private javax.swing.JMenu mbServiciosE;
-    private javax.swing.JMenuItem mitAgendarAD;
     private javax.swing.JMenuItem mitAgregarSE;
-    private javax.swing.JMenuItem mitBuscar;
-    private javax.swing.JMenuItem mitBuscarR;
-    private javax.swing.JMenuItem mitCancelarR;
     private javax.swing.JMenuItem mitCrearNR;
-    private javax.swing.JMenuItem mitListaAD;
-    private javax.swing.JMenuItem mitListaSE;
-    private javax.swing.JMenuItem mitListaT;
     private javax.swing.JMenuItem mitRegistrar;
     private javax.swing.JMenuItem mitRegresarMP;
     // End of variables declaration//GEN-END:variables
