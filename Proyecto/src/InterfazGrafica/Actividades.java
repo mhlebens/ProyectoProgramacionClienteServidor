@@ -51,7 +51,6 @@ public class Actividades extends javax.swing.JFrame {
         mitCrearNR = new javax.swing.JMenuItem();
         mbServiciosE = new javax.swing.JMenu();
         mitAgregarSE = new javax.swing.JMenuItem();
-        mbActividadesD = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -266,10 +265,6 @@ public class Actividades extends javax.swing.JFrame {
 
         jMenuBar1.add(mbServiciosE);
 
-        mbActividadesD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/5.png"))); // NOI18N
-        mbActividadesD.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
-        jMenuBar1.add(mbActividadesD);
-
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -348,7 +343,6 @@ public class Actividades extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JMenu mbActividadesD;
     private javax.swing.JMenu mbCliente;
     private javax.swing.JMenu mbPrincipal;
     private javax.swing.JMenu mbReservas;
