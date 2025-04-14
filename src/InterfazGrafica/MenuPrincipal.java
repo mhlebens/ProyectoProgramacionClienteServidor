@@ -30,7 +30,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        mbPrincipal = new javax.swing.JMenu();
         mbCliente = new javax.swing.JMenu();
         mitRegistroP = new javax.swing.JMenuItem();
         mitRegistroD = new javax.swing.JMenuItem();
@@ -61,9 +60,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenuBar1.setForeground(new java.awt.Color(0, 153, 153));
         jMenuBar1.setMargin(new java.awt.Insets(5, 5, 5, 5));
         jMenuBar1.setPreferredSize(new java.awt.Dimension(768, 60));
-
-        mbPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Dog's House Icon.png"))); // NOI18N
-        jMenuBar1.add(mbPrincipal);
 
         mbCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Client Icon.png"))); // NOI18N
         mbCliente.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
@@ -129,32 +125,23 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mitRegistroPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitRegistroPActionPerformed
-        RegistroP registroPerros = new RegistroP();
-        registroPerros.setVisible(true);
-        registroPerros.setLocationRelativeTo(null);
-        this.dispose();// Se cierra el formulario al abrir otra ventana
-
+        RegistroP ventana = new RegistroP();
+        ventana.setVisible(true);
+        ventana.setLocationRelativeTo(null);
     }//GEN-LAST:event_mitRegistroPActionPerformed
 
     private void mitRegistroDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitRegistroDActionPerformed
-        Reserva reserva = new Reserva();
-        reserva.setVisible(true);
-        reserva.setLocationRelativeTo(null);
-        this.dispose();
+        RegistroD ventana = new RegistroD();
+        ventana.setVisible(true);
+        ventana.setLocationRelativeTo(null);
     }//GEN-LAST:event_mitRegistroDActionPerformed
 
     private void mitGestionRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitGestionRActionPerformed
-        Reserva reserva = new Reserva(menuPrincipal);
-        reserva.setVisible(true);
-        reserva.setLocationRelativeTo(null);
-        this.dispose();
+        
     }//GEN-LAST:event_mitGestionRActionPerformed
 
     private void mitGestionADActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitGestionADActionPerformed
-        Actividades actividades = new Actividades();
-        actividades.setVisible(true);
-        actividades.setLocationRelativeTo(null);
-        this.dispose();
+        
     }//GEN-LAST:event_mitGestionADActionPerformed
 
     /**
@@ -202,7 +189,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JMenu mbActividadesD;
     private javax.swing.JMenu mbCliente;
-    private javax.swing.JMenu mbPrincipal;
     private javax.swing.JMenu mbReservas;
     private javax.swing.JMenuItem mitGestionAD;
     private javax.swing.JMenuItem mitGestionR;
