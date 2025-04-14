@@ -98,7 +98,7 @@ public class ControladorBD implements ActionListener {
                 registro.txtRaza.setText(perrito.getRaza());
                 /*espacio para el combo box
                 registro.cbTamano.setText(String.valueOf(perrito.getTamano()));
-
+*/
                 JOptionPane.showMessageDialog(null, "Registro encontrado");
 
             } else {
@@ -117,7 +117,7 @@ public class ControladorBD implements ActionListener {
             persona.setDescuentos(Double.parseDouble(reserva.txtDescuento.getText()));
          
 
-            if (botones.reservar(persona)) {
+            if (botones.registrarDueno(persona)) {
                 JOptionPane.showMessageDialog(null, "Registro guardado");
                 limpiarReserva();
 
@@ -130,7 +130,7 @@ public class ControladorBD implements ActionListener {
             
               if (e.getSource() == reserva.btnBuscar) {
             persona.setNumReserva(Integer.parseInt(reserva.txtNumReserva.getText()));
-            if (botones.buscar(reserva)) {
+            if (botones. buscarDuenoPorNombre(reserva)) {
                 reserva.txtNumReserva.setText(String.valueOf(persona.getNumReserva()));
                 reserva.txtFechaIn.setText(persona.getFechaIngreso());
                 reserva.txtFechaSa.setText(persona.getFechaSalida());
@@ -147,10 +147,12 @@ public class ControladorBD implements ActionListener {
                 limpiarRegistro();
             }
         }
-*/
+         }
+    
+
     
             
-        }
+        
         
 
     

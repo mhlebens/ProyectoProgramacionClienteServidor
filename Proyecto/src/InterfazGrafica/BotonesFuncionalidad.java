@@ -85,7 +85,7 @@ public class BotonesFuncionalidad {
     // ============== FUNCIONALIDAD PARA REGISTROD ==============
 
     // Método para registrar un dueño en la base de datos
-    public void registrarDueno(String nombreDueno, String correo, String telefono, String nombrePerro) {
+    public boolean registrarDueno(String nombreDueno, String correo, String telefono, String nombrePerro) {
         Connection con = conexion.getConexion();
 
         if (con != null) {
@@ -106,7 +106,7 @@ public class BotonesFuncionalidad {
     }
 
     // Método para buscar un dueño por nombre
-    public void buscarDuenoPorNombre(String nombreBuscado) {
+    public boolean buscarDuenoPorNombre(String nombreBuscado) {
         Connection con = conexion.getConexion();
 
         if (con != null) {
