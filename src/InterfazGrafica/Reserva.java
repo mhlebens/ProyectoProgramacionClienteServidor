@@ -54,15 +54,6 @@ public class Reserva extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnReservar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        mbMenuP = new javax.swing.JMenu();
-        mitRegresarMP = new javax.swing.JMenuItem();
-        mbCliente = new javax.swing.JMenu();
-        mitRegistroP = new javax.swing.JMenuItem();
-        mitRegistroD = new javax.swing.JMenuItem();
-        mbReserva = new javax.swing.JMenu();
-        mbActividadesD = new javax.swing.JMenu();
-        mitGestionAD = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -278,63 +269,6 @@ public class Reserva extends javax.swing.JFrame {
                 .addGap(12, 12, 12))
         );
 
-        jMenuBar1.setBackground(new java.awt.Color(0, 153, 153));
-        jMenuBar1.setForeground(new java.awt.Color(0, 153, 153));
-        jMenuBar1.setMargin(new java.awt.Insets(5, 5, 5, 5));
-        jMenuBar1.setPreferredSize(new java.awt.Dimension(768, 60));
-
-        mbMenuP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Dog's House Icon.png"))); // NOI18N
-
-        mitRegresarMP.setText("Regresar a menú principal");
-        mitRegresarMP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mitRegresarMPActionPerformed(evt);
-            }
-        });
-        mbMenuP.add(mitRegresarMP);
-
-        jMenuBar1.add(mbMenuP);
-
-        mbCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Client Icon.png"))); // NOI18N
-        mbCliente.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
-
-        mitRegistroP.setText("Registro de Perros");
-        mitRegistroP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mitRegistroPActionPerformed(evt);
-            }
-        });
-        mbCliente.add(mitRegistroP);
-
-        mitRegistroD.setText("Registro de Dueños");
-        mitRegistroD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mitRegistroDActionPerformed(evt);
-            }
-        });
-        mbCliente.add(mitRegistroD);
-
-        jMenuBar1.add(mbCliente);
-
-        mbReserva.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Booking Icon.png"))); // NOI18N
-        mbReserva.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
-        jMenuBar1.add(mbReserva);
-
-        mbActividadesD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/5.png"))); // NOI18N
-        mbActividadesD.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
-
-        mitGestionAD.setText("Gestión de Actividades Diarias");
-        mitGestionAD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mitGestionADActionPerformed(evt);
-            }
-        });
-        mbActividadesD.add(mitGestionAD);
-
-        jMenuBar1.add(mbActividadesD);
-
-        setJMenuBar(jMenuBar1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -348,35 +282,6 @@ public class Reserva extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    //Regresar a Menú Principal
-    private void mitRegresarMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitRegresarMPActionPerformed
-        menuPrincipal.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_mitRegresarMPActionPerformed
-
-    //Ir a Registro de Perros
-    private void mitRegistroPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitRegistroPActionPerformed
-        RegistroP regP = new RegistroP();
-        regP.setVisible(true);
-        regP.setLocationRelativeTo(null);
-        this.dispose();
-    }//GEN-LAST:event_mitRegistroPActionPerformed
-
-    //Ir a Registro de Dueños
-    private void mitRegistroDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitRegistroDActionPerformed
-        RegistroD regD = new RegistroD(menuPrincipal);
-        regD.setVisible(true);
-        regD.setLocationRelativeTo(null);
-        this.dispose();
-    }//GEN-LAST:event_mitRegistroDActionPerformed
-
-    //Ir a Gestión Actividades Diarias
-    private void mitGestionADActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitGestionADActionPerformed
-        Actividades actividades = new Actividades();
-        actividades.setVisible(true);
-        actividades.setLocationRelativeTo(null);
-    }//GEN-LAST:event_mitGestionADActionPerformed
 
 
 
@@ -393,17 +298,8 @@ public class Reserva extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JMenu mbActividadesD;
-    private javax.swing.JMenu mbCliente;
-    private javax.swing.JMenu mbMenuP;
-    private javax.swing.JMenu mbReserva;
-    private javax.swing.JMenuItem mitGestionAD;
-    private javax.swing.JMenuItem mitRegistroD;
-    private javax.swing.JMenuItem mitRegistroP;
-    private javax.swing.JMenuItem mitRegresarMP;
     public javax.swing.JTextField txtDescuento;
     public javax.swing.JTextField txtFechaIn;
     public javax.swing.JTextField txtFechaSa;
