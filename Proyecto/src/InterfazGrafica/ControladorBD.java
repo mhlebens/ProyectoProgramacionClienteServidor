@@ -16,23 +16,27 @@ public class ControladorBD implements ActionListener {
     //instancia del formularios para manejar la base de datos
     private final RegistroP registro;
     private final Reserva reserva;
+    private final RegistroD dueño;
     private final MenuPrincipal menu;
     //instancia de la clase donde se brinda la funcionalidad de los botones
     private final BotonesFuncionalidad botones;
 
     //constructor para inicializar las instancias
-    public ControladorBD(Cliente persona, Perro perrito, RegistroP registro, Reserva reserva, MenuPrincipal menu, BotonesFuncionalidad botones) {
+    public ControladorBD(Cliente persona, Perro perrito, RegistroP registro, Reserva reserva, RegistroD dueño, MenuPrincipal menu, BotonesFuncionalidad botones) {
         this.persona = persona;
         this.perrito = perrito;
         this.registro = registro;
         this.reserva = reserva;
+        this.dueño = dueño;
         this.menu = menu;
         this.botones = botones;
-
+    
+   
         //inicializacion de la accion de cickear el boton
         //botones del dormulario de registro
         this.registro.btnBuscar.addActionListener(this);
         this.registro.btnRegistrar.addActionListener(this);
+        
         //botones del forumulario de la reserva
         this.reserva.btnReservar.addActionListener(this);
         this.reserva.btnBuscar.addActionListener(this);
@@ -117,7 +121,7 @@ public class ControladorBD implements ActionListener {
             persona.setDescuentos(Double.parseDouble(reserva.txtDescuento.getText()));
          
 
-            if (botones.registrarDueno(persona)) {
+            if (botones.registrar(persona)) {
                 JOptionPane.showMessageDialog(null, "Registro guardado");
                 limpiarReserva();
 
@@ -146,8 +150,11 @@ public class ControladorBD implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Error no se encontro el registro");
                 limpiarRegistro();
             }
-        }
+              }
          }
+    }
+}
+         
     
 
     
