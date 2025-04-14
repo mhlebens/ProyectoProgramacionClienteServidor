@@ -38,102 +38,111 @@ public class BotonesFuncionalidad {
 
                 ps.executeUpdate();
                 JOptionPane.showMessageDialog(null, "Registro guardado correctamente.");
+                return true;
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Error al registrar: " + e.getMessage());
             }
         }
+        return false;
     }
 
     // Método para buscar un perro por nombre
     public boolean buscarPerroPorNombre(String nombreBuscado) {
-        Connection con = conexion.getConexion();
-        Perro perro = null;
+    Connection con = conexion.getConexion();
 
-        if (con != null) {
-            String sql = "SELECT * FROM perros WHERE nombre = ?";
+    if (con != null) {
+        String sql = "SELECT * FROM perros WHERE nombre = ?";
 
-            try (PreparedStatement ps = con.prepareStatement(sql)) {
-                ps.setString(1, nombreBuscado);
-                ResultSet rs = ps.executeQuery();
+        try (PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setString(1, nombreBuscado);
+            ResultSet rs = ps.executeQuery();
 
-                if (rs.next()) {
-                    perro = new Perro(
-                            rs.getString("nombre"),
-                            rs.getInt("edad"),
-                            rs.getString("raza"),
-                            rs.getString("tamano"),
-                            rs.getString("fecha_ingreso"),
-                            rs.getString("fecha_salida"),
-                            rs.getInt("dias"),
-                            rs.getInt("num_reserva"),
-                            rs.getDouble("descuentos"),
-                            rs.getDouble("costo_total")
-                    );
-                    perro.setCondicion(rs.getBoolean("condicion"));
-                } else {
-                    JOptionPane.showMessageDialog(null, "Perro no encontrado.");
-                }
+            if (rs.next()) {
+                // Mostrar los datos directamente (o llenar el objeto desde afuera)
+                String datos = "Nombre: " + rs.getString("nombre") +
+                               "\nEdad: " + rs.getInt("edad") +
+                               "\nRaza: " + rs.getString("raza") +
+                               "\nTamaño: " + rs.getString("tamano") +
+                               "\nCondición: " + (rs.getBoolean("condicion") ? "Sí" : "No") +
+                               "\nFecha Ingreso: " + rs.getString("fecha_ingreso") +
+                               "\nFecha Salida: " + rs.getString("fecha_salida") +
+                               "\nDías: " + rs.getInt("dias") +
+                               "\nReserva N°: " + rs.getInt("num_reserva") +
+                               "\nDescuentos: " + rs.getDouble("descuentos") +
+                               "\nCosto Total: " + rs.getDouble("costo_total");
 
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Error al buscar: " + e.getMessage());
+                JOptionPane.showMessageDialog(null, datos);
+                return true;
+            } else {
+                JOptionPane.showMessageDialog(null, "Perro no encontrado.");
             }
-        }
 
-        return perro;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al buscar: " + e.getMessage());
+        }
     }
+
+    return false;
+}
 
     // ============== FUNCIONALIDAD PARA REGISTROD ==============
 
     // Método para registrar un dueño en la base de datos
     public boolean registrarDueno(String nombreDueno, String correo, String telefono, String nombrePerro) {
-        Connection con = conexion.getConexion();
+    Connection con = conexion.getConexion();
 
-        if (con != null) {
-            String sql = "INSERT INTO duenos (nombre_dueno, correo, telefono, nombre_perro) VALUES (?, ?, ?, ?)";
+    if (con != null) {
+        String sql = "INSERT INTO duenos (nombre_dueno, correo, telefono, nombre_perro) VALUES (?, ?, ?, ?)";
 
-            try (PreparedStatement ps = con.prepareStatement(sql)) {
-                ps.setString(1, nombreDueno);
-                ps.setString(2, correo);
-                ps.setString(3, telefono);
-                ps.setString(4, nombrePerro);
+        try (PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setString(1, nombreDueno);
+            ps.setString(2, correo);
+            ps.setString(3, telefono);
+            ps.setString(4, nombrePerro);
 
-                ps.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Dueño registrado correctamente.");
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Error al registrar dueño: " + e.getMessage());
-            }
+            ps.executeUpdate();
+            JOptionPane.showMessageDialog(null, "Dueño registrado correctamente.");
+            return true; 
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al registrar dueño: " + e.getMessage());
         }
     }
+
+    return false; 
+}
 
     // Método para buscar un dueño por nombre
     public boolean buscarDuenoPorNombre(String nombreBuscado) {
-        Connection con = conexion.getConexion();
+    Connection con = conexion.getConexion();
 
-        if (con != null) {
-            String sql = "SELECT * FROM duenos WHERE nombre_dueno = ?";
+    if (con != null) {
+        String sql = "SELECT * FROM duenos WHERE nombre_dueno = ?";
 
-            try (PreparedStatement ps = con.prepareStatement(sql)) {
-                ps.setString(1, nombreBuscado);
-                ResultSet rs = ps.executeQuery();
+        try (PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setString(1, nombreBuscado);
+            ResultSet rs = ps.executeQuery();
 
-                if (rs.next()) {
-                    String datos = "Nombre: " + rs.getString("nombre_dueno")
-                                 + "\nCorreo: " + rs.getString("correo")
-                                 + "\nTeléfono: " + rs.getString("telefono")
-                                 + "\nNombre del Perro: " + rs.getString("nombre_perro");
+            if (rs.next()) {
+                String datos = "Nombre: " + rs.getString("nombre_dueno")
+                             + "\nCorreo: " + rs.getString("correo")
+                             + "\nTeléfono: " + rs.getString("telefono")
+                             + "\nNombre del Perro: " + rs.getString("nombre_perro");
 
-                    JOptionPane.showMessageDialog(null, datos);
-                } else {
-                    JOptionPane.showMessageDialog(null, "Dueño no encontrado.");
-                }
-
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Error al buscar dueño: " + e.getMessage());
+                JOptionPane.showMessageDialog(null, datos);
+                return true;
+            } else {
+                JOptionPane.showMessageDialog(null, "Dueño no encontrado.");
             }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error al buscar dueño: " + e.getMessage());
         }
     }
 
-    // ============== FUNCIONALIDAD PARA SERVICIOS ==============
+    return false; 
+}
+
+    // funcionalidad de servicios
 
     // Método para registrar una reserva de servicio
     public void registrarServicio(String nombrePerro, String tipoServicio, String fechaInicio, String fechaFin, int dias, double costoPorDia) {
