@@ -16,7 +16,7 @@ public class BotonesFuncionalidad {
     // ============== FUNCIONALIDAD PARA REGISTROP ==============
 
     // Método para registrar un perro en la base de datos
-    public void registrarPerro(Perro perro) {
+    public boolean registrarPerro(Perro perro) {
         Connection con = conexion.getConexion();
 
         if (con != null) {
@@ -45,7 +45,7 @@ public class BotonesFuncionalidad {
     }
 
     // Método para buscar un perro por nombre
-    public Perro buscarPerroPorNombre(String nombreBuscado) {
+    public boolean buscarPerroPorNombre(String nombreBuscado) {
         Connection con = conexion.getConexion();
         Perro perro = null;
 

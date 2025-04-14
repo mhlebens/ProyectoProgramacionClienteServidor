@@ -5,7 +5,7 @@ import java.awt.event.*;
 import javax.swing.JOptionPane;
 import Entidades.Cliente;
 import Entidades.Perro;
-import ConectarBD.BotonesFuncionalidad;
+
 
 public class ControladorBD implements ActionListener {
     //instancia de la clase Cliente, porque es la última que recibe la herencia de las clases
@@ -66,20 +66,20 @@ public class ControladorBD implements ActionListener {
     //implemntacion de la accion de presionar los botones
     @Override
     public void actionPerformed(ActionEvent e) {
-    }
-    /*
     
-        //boton de registrar
+    
+    
+        //boton de registrar en la para el formulario RegistroP
         if (e.getSource() == registro.btnRegistrar) {
             perrito.setNombrePerro(registro.txtNombrePerro.getText());
             perrito.setRaza(registro.txtRaza.getText());
 
             /* Espacio para el combo box, 
             perrito.setTamano(registro.cbTamano.getText()));
-             
+             */
             perrito.setEdad(Integer.parseInt(registro.txtEdad.getText()));
 
-            if (botones.registrar(perrito)) {
+            if (botones.registrarPerro(perrito)) {
                 JOptionPane.showMessageDialog(null, "Registro guardado");
                 limpiarRegistro();
 
@@ -92,7 +92,7 @@ public class ControladorBD implements ActionListener {
         //boton buscar
         if (e.getSource() == registro.btnBuscar) {
             perrito.setNombrePerro(registro.txtNombrePerro.getText());
-            if (botones.buscar(registro)) {
+            if (botones.buscarPerroPorNombre(registro)) {
                 registro.txtEdad.setText(String.valueOf(perrito.getEdad()));
                 registro.txtNombrePerro.setText(perrito.getNombrePerro());
                 registro.txtRaza.setText(perrito.getRaza());
