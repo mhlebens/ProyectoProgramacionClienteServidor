@@ -1,20 +1,26 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+Este es el frame de Registro de Dueños
  */
 package InterfazGrafica;
+import ConectarBD.ConexionBD;
+import java.sql.Connection;
 
 /**
  *
  * @author marif
  */
 public class RegistroD extends javax.swing.JFrame {
+    
+    //Para navegar por el MenuBar
+    private MenuPrincipal menuPrincipal;
 
-    /**
-     * Creates new form RegistroD
-     */
-    public RegistroD() {
+    public RegistroD(MenuPrincipal menuPrincipal) {
         initComponents();
+        this.menuPrincipal = menuPrincipal;
+        
+        //Conexión con la base de datos
+        ConexionBD conexion = new ConexionBD();
+        Connection conn = conexion.getConexion();
     }
 
     /**
@@ -32,25 +38,24 @@ public class RegistroD extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
+        txtCorreo = new javax.swing.JTextField();
+        txtTelefono = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        txtNombreP = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnRegistrar = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        mbPrincipal = new javax.swing.JMenu();
+        mbMenuP = new javax.swing.JMenu();
         mitRegresarMP = new javax.swing.JMenuItem();
         mbCliente = new javax.swing.JMenu();
-        mbReservas = new javax.swing.JMenu();
-        mitCrearNR = new javax.swing.JMenuItem();
-        mbServiciosE = new javax.swing.JMenu();
-        mitAgregarSE = new javax.swing.JMenuItem();
+        mitRegistroP = new javax.swing.JMenuItem();
+        mbReserva = new javax.swing.JMenu();
+        mitGestionR = new javax.swing.JMenuItem();
         mbActividadesD = new javax.swing.JMenu();
-        mitListaAD = new javax.swing.JMenuItem();
+        mitGestionAD = new javax.swing.JMenuItem();
 
         jLabel5.setText("jLabel5");
 
@@ -72,17 +77,17 @@ public class RegistroD extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Teléfono:");
 
-        jTextField1.setBackground(new java.awt.Color(220, 201, 201));
-        jTextField1.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
+        txtNombre.setBackground(new java.awt.Color(220, 201, 201));
+        txtNombre.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        txtNombre.setForeground(new java.awt.Color(0, 0, 0));
 
-        jTextField2.setBackground(new java.awt.Color(220, 201, 201));
-        jTextField2.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
+        txtCorreo.setBackground(new java.awt.Color(220, 201, 201));
+        txtCorreo.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        txtCorreo.setForeground(new java.awt.Color(0, 0, 0));
 
-        jTextField3.setBackground(new java.awt.Color(220, 201, 201));
-        jTextField3.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(0, 0, 0));
+        txtTelefono.setBackground(new java.awt.Color(220, 201, 201));
+        txtTelefono.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        txtTelefono.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel7.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
@@ -92,9 +97,9 @@ public class RegistroD extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Nombre del perro:");
 
-        jTextField4.setBackground(new java.awt.Color(220, 201, 201));
-        jTextField4.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(0, 0, 0));
+        txtNombreP.setBackground(new java.awt.Color(220, 201, 201));
+        txtNombreP.setFont(new java.awt.Font("Myanmar Text", 0, 14)); // NOI18N
+        txtNombreP.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -111,17 +116,17 @@ public class RegistroD extends javax.swing.JFrame {
                         .addGap(12, 12, 12)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel6)
                                 .addGap(12, 12, 12)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtNombreP, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(108, 108, 108)
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(121, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -133,16 +138,16 @@ public class RegistroD extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel6)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtNombreP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(59, 59, 59)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(59, 59, 59))
         );
 
@@ -150,15 +155,15 @@ public class RegistroD extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Registro de Dueños");
 
-        jButton1.setBackground(new java.awt.Color(0, 153, 153));
-        jButton1.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
-        jButton1.setText("Registar");
+        btnRegistrar.setBackground(new java.awt.Color(0, 153, 153));
+        btnRegistrar.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
+        btnRegistrar.setText("Registar");
 
-        jButton2.setBackground(new java.awt.Color(0, 102, 102));
-        jButton2.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
-        jButton2.setText("Buscar");
-        jButton2.setAlignmentY(0.0F);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnBuscar.setBackground(new java.awt.Color(0, 102, 102));
+        btnBuscar.setFont(new java.awt.Font("Myanmar Text", 1, 14)); // NOI18N
+        btnBuscar.setText("Buscar");
+        btnBuscar.setAlignmentY(0.0F);
+        btnBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -174,9 +179,9 @@ public class RegistroD extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(324, 324, 324)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(43, 43, 43)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -188,8 +193,8 @@ public class RegistroD extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnBuscar)
+                    .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(36, 36, 36))
         );
 
@@ -198,43 +203,54 @@ public class RegistroD extends javax.swing.JFrame {
         jMenuBar1.setMargin(new java.awt.Insets(5, 5, 5, 5));
         jMenuBar1.setPreferredSize(new java.awt.Dimension(768, 60));
 
-        mbPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Dog's House Icon.png"))); // NOI18N
+        mbMenuP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Dog's House Icon.png"))); // NOI18N
 
-        mitRegresarMP.setText("Regresar al Menú Principal");
+        mitRegresarMP.setText("Regresar a menú principal");
         mitRegresarMP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mitRegresarMPActionPerformed(evt);
             }
         });
-        mbPrincipal.add(mitRegresarMP);
+        mbMenuP.add(mitRegresarMP);
 
-        jMenuBar1.add(mbPrincipal);
+        jMenuBar1.add(mbMenuP);
 
         mbCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Client Icon.png"))); // NOI18N
         mbCliente.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
+
+        mitRegistroP.setText("Registro de Perros");
+        mitRegistroP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mitRegistroPActionPerformed(evt);
+            }
+        });
+        mbCliente.add(mitRegistroP);
+
         jMenuBar1.add(mbCliente);
 
-        mbReservas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Booking Icon.png"))); // NOI18N
-        mbReservas.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
+        mbReserva.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Booking Icon.png"))); // NOI18N
+        mbReserva.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
 
-        mitCrearNR.setText("Reserva");
-        mbReservas.add(mitCrearNR);
+        mitGestionR.setText("Gestión de Reservas");
+        mitGestionR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mitGestionRActionPerformed(evt);
+            }
+        });
+        mbReserva.add(mitGestionR);
 
-        jMenuBar1.add(mbReservas);
-
-        mbServiciosE.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/ExtraServices Icon.png"))); // NOI18N
-        mbServiciosE.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
-
-        mitAgregarSE.setText("Servicio Extra");
-        mbServiciosE.add(mitAgregarSE);
-
-        jMenuBar1.add(mbServiciosE);
+        jMenuBar1.add(mbReserva);
 
         mbActividadesD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/5.png"))); // NOI18N
         mbActividadesD.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
 
-        mitListaAD.setText("Actividades Diarias");
-        mbActividadesD.add(mitListaAD);
+        mitGestionAD.setText("Gestión de Actividades Diarias");
+        mitGestionAD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mitGestionADActionPerformed(evt);
+            }
+        });
+        mbActividadesD.add(mitGestionAD);
 
         jMenuBar1.add(mbActividadesD);
 
@@ -254,48 +270,41 @@ public class RegistroD extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Regresar a Menú Principal
     private void mitRegresarMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitRegresarMPActionPerformed
-        // TODO add your handling code here:
+        menuPrincipal.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_mitRegresarMPActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RegistroD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RegistroD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RegistroD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RegistroD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    //Ir a Registro de Perros
+    private void mitRegistroPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitRegistroPActionPerformed
+        RegistroP regP = new RegistroP(menuPrincipal);
+        regP.setVisible(true);
+        regP.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_mitRegistroPActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new RegistroD().setVisible(true);
-            }
-        });
-    }
+    //Ir a frame de Reservas
+    private void mitGestionRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitGestionRActionPerformed
+        Reserva reserva = new Reserva(menuPrincipal);
+        reserva.setVisible(true);
+        reserva.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_mitGestionRActionPerformed
+
+    //Ir a Gestión Actividades Diarias
+    private void mitGestionADActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mitGestionADActionPerformed
+        Actividades actividades = new Actividades(menuPrincipal);
+        actividades.setVisible(true);
+        actividades.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_mitGestionADActionPerformed
+
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton jButton1;
-    public javax.swing.JButton jButton2;
+    public javax.swing.JButton btnBuscar;
+    public javax.swing.JButton btnRegistrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -306,18 +315,17 @@ public class RegistroD extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    public javax.swing.JTextField jTextField1;
-    public javax.swing.JTextField jTextField2;
-    public javax.swing.JTextField jTextField3;
-    public javax.swing.JTextField jTextField4;
-    public javax.swing.JMenu mbActividadesD;
-    public javax.swing.JMenu mbCliente;
-    public javax.swing.JMenu mbPrincipal;
-    public javax.swing.JMenu mbReservas;
-    public javax.swing.JMenu mbServiciosE;
-    public javax.swing.JMenuItem mitAgregarSE;
-    public javax.swing.JMenuItem mitCrearNR;
-    public javax.swing.JMenuItem mitListaAD;
-    public javax.swing.JMenuItem mitRegresarMP;
+    private javax.swing.JMenu mbActividadesD;
+    private javax.swing.JMenu mbCliente;
+    private javax.swing.JMenu mbMenuP;
+    private javax.swing.JMenu mbReserva;
+    private javax.swing.JMenuItem mitGestionAD;
+    private javax.swing.JMenuItem mitGestionR;
+    private javax.swing.JMenuItem mitRegistroP;
+    private javax.swing.JMenuItem mitRegresarMP;
+    public javax.swing.JTextField txtCorreo;
+    public javax.swing.JTextField txtNombre;
+    public javax.swing.JTextField txtNombreP;
+    public javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }
